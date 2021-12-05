@@ -20,7 +20,9 @@ public:
     T Pop();
     friend ostream& operator << (ostream& stream, const List& a); 
 };
-List<void>::~List() 
+
+template <typename T>
+List<T>::~List() 
 {
     Node* temp = Head; 
     while (temp != 0) 
@@ -30,6 +32,7 @@ List<void>::~List()
         Head = temp; 
     }
 }
+
 void List<void>::Push(int x)
 {
     Node* temp = new Node; 
